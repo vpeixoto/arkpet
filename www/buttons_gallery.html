@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Screen 1</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/custom.css">
+		<link rel="stylesheet" href="./css/bootstrap-slider.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<div class="header-upper">
+					<div class="arrow text-center col-xs-3"><i class="fa fa-arrow-left"></i></div>
+					<div class="text col-xs-9">Cadastro de Pet</div>
+				</div>
+				<div class="header-lower">
+					<div class="one"></div>
+					<div class="two"></div>
+					<div class="three"></div>
+					<div class="four"></div>
+				</div>
+			</div>
+			<div>
+            	<div class="col-xs-4">
+				<div class="submit-btn-custom-camera">
+					<div class="submit-btn-camera">
+						<i class="fa fa-camera-retro"></i>
+					</div>
+				</div>
+                </div>
+                <div class="col-xs-4">
+				<div class="submit-btn-custom-gallery">
+					<div class="submit-btn-gallery">
+						<i class="fa fa-picture-o"></i>
+					</div>
+				</div>
+                </div>
+                <div class="col-xs-4">
+				<div class="submit-btn-custom-cancel">
+					<div class="submit-btn-cancel">
+						<i class="fa fa-ban"></i>
+					</div>
+				</div>
+                </div>
+			</div>
+		</div>
+		<!-- jQuery -->
+		<script src="./js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/bootstrap-slider.min.js"></script>
+		
+ 		<script type="text/javascript">
+ 			// Instantiate a slider
+			var mySlider = $("input.slider").slider();
+
+			// Call a method on the slider
+			var value = mySlider.slider('getValue');
+
+			$(".btn").click(function(event) {
+				/* Act on the event */
+				if(!$(this).hasClass('active'))
+				{
+					$(this).removeClass('inactive');
+					$(this).addClass('active');
+					if($(this).hasClass('btn-default'))
+					{
+						$('.btn-success').removeClass('active');
+						$('.btn-success').addClass('inactive');
+						$("#btnVal").val('1');
+					}
+					else
+					{
+						$('.btn-default').removeClass('active');
+						$('.btn-default').addClass('inactive');
+						$("#btnVal").val('0');
+					}
+				}
+			});
+ 		</script>
+	</body>
+</html>

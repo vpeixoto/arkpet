@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Veterinários</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/bootstrap-slider.css">
+  		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css"/>
+ 		<style type="text/css">
+			html, body {
+				margin: 0;
+				padding: 10px 10px 10px;
+				height: 100%;
+			}
+
+			#map {
+				position:absolute; width:100%; height:90%;
+				/*width: 100%;
+				height: 400px;*/
+			}
+			#content{
+  				color: #0d2c53;			}
+
+			#firstHeading{
+  			text-align: center;
+			}
+	 	</style>
+
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<div class="header-upper">
+					<div class="arrow text-center col-xs-4" id="voltar"><i class="fa fa-arrow-left"></i></div>
+					<div class="text col-xs-8">Veterinários</div>
+				</div>
+				<div class="header-lower">
+					<div class="one"></div>
+					<div class="two"></div>
+					<div class="three"></div>
+					<div class="four"></div>
+				</div>
+			</div>
+			<div class="control-container">
+            	<div id="map">
+            	</div>
+                    
+            </div>
+		</div>
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script> 
+  		<script src="js/jquery.mobile-1.4.3.min.js"></script> 
+  		<script type="text/javascript" src="cordova.js"></script>
+  		<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+  		<!--
+		<script type="text/javascript" src="js/markerclusterer.js"></script>   
+  		-->
+        <script type="text/javascript" src="js/master.js"></script>
+        <script type="text/javascript" src="js/maps_vet.js"></script>
+  		<script type="text/javascript">
+            app.initialize();
+  		</script>
+
+	</body>
+</html>

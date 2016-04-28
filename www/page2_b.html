@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/page2.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+        <!-- Bootstrap Core CSS -->
+        <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <style>
+			#button1 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_cadastro.png) no-repeat top;
+			}
+			#button1:active {
+			  background: url(img/btn_cadastro_click.png) no-repeat bottom;
+			}
+			#button2 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_album.png) no-repeat top;
+			}
+			#button2:active {
+			  background: url(img/btn_album_click.png) no-repeat bottom;
+			}
+			#button3 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_vacinas.png) no-repeat top;
+			}
+			#button3:active {
+			  background: url(img/btn_vacinas_click.png) no-repeat bottom;
+			}
+			#button4 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_veterinarios.png) no-repeat top;
+			}
+			#button4:active {
+			  background: url(img/btn_veterinarios_click.png) no-repeat bottom;
+			}
+			#button5 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_petshops.png) no-repeat top;
+			}
+			#button5:active {
+			  background: url(img/btn_petshops_click.png) no-repeat bottom;
+			}
+			#button6 {
+			  display: block;
+			  width: 150px;
+			  height: 150px;
+			  background: url(img/btn_encontros.png) no-repeat top;
+			}
+			#button6:active {
+			  background: url(img/btn_encontros_click.png) no-repeat bottom;
+			}
+		</style>
+        
+        <title>Pet`s Life</title>
+        
+    </head>
+    <body>
+    	
+        <div data-role="page" id="first">
+        
+        	<div data-role="header" class="header" data-id="my-header" data-position="fixed">
+                <div align="center">
+            		<h2>Primeiros Passos</h2>
+            	</div>
+         	</div><!-- /header -->
+            <div data-role="content">
+            	<div id="gallery" class="ui-grid-a">
+                	<div class="ui-block-a">
+                    	<div class="thumbnail">
+                        	<a id="button1" 
+                            onClick="PetCadastro();"></a>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="thumbnail">
+                        	<a id="button2" 
+                            onClick="album();"></a>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                    	<div class="thumbnail">
+                        	<a id="button3"
+                            onClick="Vaccines();"></a>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="thumbnail">
+                        	<a id="button4" onClick="veterinarios();"></a>
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                    	<div class="thumbnail">
+                        	<a id="button5"
+                            onClick="petShops();"></a>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="thumbnail">
+                        	<a id="button6"
+                            onClick="PetEncontros();"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--
+        <script type="text/javascript" src="js/index.js"></script>
+        -->
+        <script type="text/javascript" src="js/page2.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    </body>
+</html>

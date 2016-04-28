@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/page2.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+        <!-- Bootstrap Core CSS -->
+        <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    	<!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <title>Pet`s Life</title>
+        
+    </head>
+    <body>
+    	
+        <div data-role="page" id="first">
+        
+        	<div data-role="header" class="header" data-id="my-header" data-position="fixed">
+                <div align="center">
+            		<h2>Adicionar vacina</h2>
+            	</div>
+         	</div><!-- /header -->
+            <div data-role="content">
+            	<form class="text-left register">
+					<div class="main-login-form">
+						<div class="login-group">
+                            <div class="form-group">
+                            	<label>Vacina </label>
+                                <span class="arr"></span>
+                                <select id="vaccines">
+                                    <option value="" selected>Escolha ...</option>
+                                    <option value="Vermifugo">Vermífugo</option>
+                                    <option value="Anti-pulgas">Anti-pulgas</option>
+                                    <option value="v8-v10">V8 ou V10</option>
+                                    <option value="v4">V4</option>
+                                    <option value="tosse">Tosse</option>
+                                    <option value="Anti-rabica">Anti-rábica</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                            	<label>Em quanto tempo deseja ser alertado:</label>
+                            	<div>
+								<label class="radio-inline"><input type="radio" name="optradio" id="1">cada 1 mês</label>
+                            	<label class="radio-inline"><input type="radio" name="optradio" id="3">cada 3 meses</label>
+								<label class="radio-inline"><input type="radio" name="optradio" id="30">em 30 dias</label>
+								</div>
+                                <label class="radio-inline"><input type="radio" name="optradio" id="42">em 42 dias</label>
+								<label class="radio-inline"><input type="radio" name="optradio" id="63">em 63 dias</label>
+								<label class="radio-inline"><input type="radio" name="optradio" id="84">em 84 dias</label>
+								<label class="radio-inline"><input type="radio" name="optradio" id="120">em 120 dias</label>
+                            </div>
+                            
+						</div>
+                        <button type="button" class="ui-btn ui-btn-green" onclick="vaccine_submit()">Cadastrar</button>
+			</div>
+		</form>
+            	
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/master.js"></script> 
+        <script type="text/javascript" src="js/register.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+                <script type="text/javascript">
+            var id = 1, dialog;
+
+            callback = function () {
+                cordova.plugins.notification.local.getIds(function (ids) {
+                    showToast('IDs: ' + ids.join(' ,'));
+                });
+            };
+
+            showToast = function (text) {
+                setTimeout(function () {
+                    if (device.platform != 'windows') {
+                        window.plugins.toast.showShortBottom(text);
+                    } else {
+                        showDialog(text);
+                    }
+                }, 100);
+            };
+
+            showDialog = function (text) {
+                if (dialog) {
+                    dialog.content = text;
+                    return;
+                }
+
+                dialog = new Windows.UI.Popups.MessageDialog(text);
+
+                dialog.showAsync().done(function () {
+                    dialog = null;
+                });
+            };
+
+        </script>
+        <script>
+			function vaccine_submit(){
+				var e = document.getElementById("vaccines");
+				var vaccines = e.options[e.selectedIndex].value;
+				
+				if(vaccines == ""){
+					alert('Por Favor escolha uma vacina!');
+				}else{
+					var x;
+					var CurrentDate = new Date();
+				
+					if (document.getElementById('1').checked) {
+						x = 1;
+						CurrentDate.setMonth(CurrentDate.getMonth() + x);
+						
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('3').checked) {
+						x = 3;
+						CurrentDate.setMonth(CurrentDate.getMonth() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('30').checked) {
+						x = 30;
+						CurrentDate.setDate(CurrentDate.getDate() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('42').checked) {
+						x = 42;
+						CurrentDate.setDate(CurrentDate.getDate() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('63').checked) {
+						x = 63;
+						CurrentDate.setDate(CurrentDate.getDate() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('84').checked) {
+						x = 84;
+						CurrentDate.setDate(CurrentDate.getDate() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else
+					if (document.getElementById('120').checked) {
+						x = 120;
+						CurrentDate.setDate(CurrentDate.getDate() + x);
+						cordova.plugins.notification.local.schedule({
+							id: x,
+							text: 'Está na hora de tomar a vacina ' + vaccines,
+							icon: 'img/icon.png',
+							smallIcon: 'img/icon.png',
+							at: CurrentDate,
+							data: { test: id }
+						});
+						voltar();
+					}else{
+						alert("Por favor, escolha o tempo que deseja!");
+					}
+								
+				/*
+				var x = 1; //or whatever offset 
+				var CurrentDate = new Date();
+				CurrentDate.setSeconds(CurrentDate.getSeconds() + 10);
+				alert('add');
+				
+				//CurrentDate.setMonth(CurrentDate.getMonth() + x);
+
+				/*
+				window.location.href = "vaccines.html";
+				*/
+				}
+			}
+			function voltar(){
+				window.location.href = "vaccines.html";
+			}
+
+
+		</script>
+
+    </body>
+</html>

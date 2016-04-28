@@ -1,0 +1,14 @@
+img{
+	width:100%;
+}
+
+.thumbnail{
+	padding:5px;
+	height:150px;
+	background-color:transparent;
+	border: 0px solid #e7edf0;
+}
+
+#gallery img{
+	height:100%;
+}

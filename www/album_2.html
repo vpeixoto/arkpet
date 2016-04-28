@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/page2.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+        <!-- Bootstrap Core CSS -->
+        <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <title>Pet`s Life</title>
+        
+    </head>
+    <body>
+    	
+        <div data-role="page" id="first">
+        
+        	<div data-role="header" class="header" data-id="my-header" data-position="fixed">
+					<div class="text col-xs-8"><h2>Álbum de fotos</h2></div>
+                    <div class="text col-xs-4"<i class="fa fa-camera" aria-hidden="true"></i></div>
+            	</div>
+         	</div><!-- /header -->
+            <div data-role="content">
+            	<div id="gallery" class="ui-grid-a">
+                	<div class="ui-block-a">
+                    	<div class="thumbnail">
+                        	<img src="pics/foto1.png" title="" onClick="foto1();" />
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="thumbnail">
+                        	<img src="pics/foto2.jpg" title="" onClick="foto2();" />
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                    	<div class="thumbnail">
+                        	<img src="pics/foto3.jpg" title="" onClick="foto3();" />
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="thumbnail">
+                        	<img src="pics/foto4.jpg" title="" onClick="foto4();" />
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="ui-btn ui-btn-blue" onclick="voltar();">
+            		<span class="fa fa-arrow-circle-left fa-2x"></span> Voltar
+          		</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript">
+			
+			function foto1(){
+				window.location.href = "foto1.html";
+			}
+			function foto2(){
+				window.location.href = "foto2.html";
+			}
+			function foto3(){
+				window.location.href = "foto3.html";
+			}
+			function foto4(){
+				window.location.href = "foto4.html";
+			}
+			function voltar(){
+				window.location.href = "page2.html";
+			}
+        </script>
+    </body>
+</html>

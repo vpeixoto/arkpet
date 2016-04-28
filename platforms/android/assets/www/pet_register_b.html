@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Screen 1</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/custom.css">
+		<link rel="stylesheet" href="./css/bootstrap-slider.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/Project.js"></script>
+		<!-- jQuery -->
+		<script src="./js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/bootstrap-slider.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+
+	</head>
+	<body>
+		<form class="main" method="get" onsubmit="return false;">
+			<div class="header">
+				<div class="header-upper">
+					<div class="arrow text-center col-xs-3"><i class="fa fa-arrow-left"></i></div>
+					<div class="text col-xs-9">Cadastro de Pet</div>
+				</div>
+				<div class="header-lower">
+					<div class="one"></div>
+					<div class="two"></div>
+					<div class="three"></div>
+					<div class="four"></div>
+				</div>
+			</div>
+			<!--<form action="" method="post" class="bet-won-dtl" id="closed_bet_details">-->
+			<div class="control-container">
+				<div class="label-txt text-center">Adicionar Foto</div>
+				<div class="upload" onclick="showImageUpload()">
+					<!--<input type="file" name="upload"/>-->
+					<img src="" alt="" id="img_image"/>
+					<input type="hidden" name="profile_pic" id="image" value=""/>
+					<!--<a href="#" onclick="showImageUpload()" ></a>-->
+					<span class="file-txt text-center">
+						+
+					</span>
+				</div>
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Meu Animal</div>
+				<div class="control-txt">
+					<div class="col-xs-6 text-center btn-con"><button class="btn btn-success active">Femea</button></div>
+					<div class="col-xs-6 text-center btn-con"><button class="btn btn-default inactive">Macho</button></div>
+				</div>
+				<input type="hidden" value="0">
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Nome</div>
+				<div class="control-txt-50">
+					<div class="col-xs-12 text-center style-4 clearfix">
+						<input type="text" class="text-center" placeholder="Name" id="pet_name">
+					</div>
+				</div>
+			</div>
+            <div class="control-container">
+            	<article>
+                <fieldset>
+				<div class="label-txt text-center">Raça</div>
+                <form>
+                <div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Cachorro
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<label>
+                        	<input value="cachorro" type="radio" name="formselector" 
+                            onclick="displayForm(this)" id="cachorro">
+                            </label>
+						</div>
+					</div>
+				</div>
+                <div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Gato
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<label>
+                            <input value="gato" type="radio" name="formselector" onclick="displayForm(this)" id="gato">
+                            </label>  
+						</div>
+					</div>
+				</div>
+                </form>
+                
+                <form style="display:none" id="catform">
+                	<div class="label-txt text-center">
+						Escolha a raça do seu Gato:
+					</div>
+					<div class="control-txt-50">
+                	<div class="col-xs-12 text-center">
+						<select id="raca" name="raca" required>
+                        <option value="SRD">SRD</option>
+                    	<option value="Abissínio">Abissínio</option>
+                    	<option value="Angorá">Angorá</option>
+                    	<option value="Balinês">Balinês</option>
+                    	<option value="Bengali">Bengali</option>
+                    	<option value="Bobtail Japonês">Bobtail Japonês</option>
+                    	<option value="Bombaim">Bombaim</option>
+                    	<option value="British Shorthair">British Shorthair</option>
+                    	<option value="Burmilla">Burmilla</option>
+                    	<option value="Califórnia Malhado">Califórnia Malhado</option>
+                    	<option value="Chartreux">Chartreux</option>
+                    	<option value="Cingapura">Cingapura</option>
+                    	<option value="Colorpoint Shorthair">Colorpoint Shorthair</option>
+                    	<option value="Cornish Rex">Cornish Rex</option>
+                    	<option value="Devon Rex">Devon Rex</option>
+                    	<option value="Doméstico">Doméstico</option>
+                    	<option value="Exótico">Exótico</option>
+                    	<option value="German Rex">German Rex</option>
+                    	<option value="Korat">Korat</option>
+                    	<option value="La Perm">La Perm</option>
+                    	<option value="Maine Coon">Maine Coon</option>
+                    	<option value="Mau Egípcio">Mau Egípcio</option>
+                    	<option value="Munchkin">Munchkin</option>
+                    	<option value="Norueguês da Floresta">Norueguês da Floresta</option>
+                    	<option value="Ocicat">Ocicat</option>
+                    	<option value="Oriental">Oriental</option>
+                    	<option value="Pêlo Curto Europeu">Pêlo Curto Europeu</option>
+                    	<option value="Pêlo Longo Colourpoint">Pêlo Longo Colourpoint</option>
+                    	<option value="Persa">Persa</option>
+                    	<option value="Peterbald">Peterbald</option>
+                    	<option value="Pixie Bob">Pixie Bob</option>
+                    	<option value="RagaMuffin">RagaMuffin</option>
+                    	<option value="Ragdoll">Ragdoll</option>
+                    	<option value="Russian Blue">Russian Blue</option>
+                    	<option value="Sagrado da Birmânia">Sagrado da Birmânia</option>
+                    	<option value="Scottish Fold">Scottish Fold</option>
+                    	<option value="Selkirk Rex">Selkirk Rex</option>
+                    	<option value="Serengeti">Serengeti</option>
+                    	<option value="Siamês">Siamês</option>
+                    	<option value="Somali">Somali</option>
+                    	<option value="Sphynx">Sphynx</option>
+                    	<option value="Tiffanie">Tiffanie</option>
+                    	<option value="Tonquinês">Tonquinês</option>
+                    	<option value="Van Turco">Van Turco</option>
+						</select>
+					</div>
+					</div>
+                
+            	</form>
+            	<form style="display:none" id="dogform">
+                	<div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-12 text-center">
+						Escolha a raça do seu Cachorro:
+					</div>
+                    </div>
+					<div class="control-txt-50">
+                	<div class="col-xs-12 text-center">
+						<select name="raca" required>
+                        
+						</select>
+					</div>
+					</div>
+            		
+            	</form> 
+            
+    			</fieldset>
+    			</article>
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Quero Conhecer</div>
+				<div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Femea
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<input type="radio" name="gender" value="femea" id="squaredThree" checked/>
+							<label for="squaredThree"></label>
+						</div>
+					</div>
+				</div>
+				<div class="control-txt-50">
+					<div class="col-xs-1"></div>
+                    <div class="col-xs-8">
+						Macho
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredFour">
+							<input type="radio" name="gender" value="macho" id="squaredFour" />
+							<label for="squaredFour"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Idade</div>
+				<div class="control-txt slider-container">
+					<div class="col-xs-2-custom text-center"> 0 </div>
+					<div class="col-xs-8-custom"><input type="text" name="slider" class="slider" data-provide="slider" data-slider-min="0" data-slider-max="29" data-slider-step="1" data-slider-value="0" data-slider-tooltip_position="bottom" data-slider-tooltip="show"></div>
+					<div class="col-xs-2-custom text-center"> 29 </div>
+				</div>
+			</div>
+			<div>
+				<div class="submit-btn-custom" onclick="callWSPetRegister()">
+					<div class="submit-btn-inner">
+						<i class="fa fa-check"></i>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<div id="image_action_sheet" class="popup" style="position: absolute; bottom: 0; width: 100%; display: none;  margin: 0; padding: 0; left: 0; z-index: 1000;">
+			<div  class="large-share-btns">
+				<ul>
+					<li>
+						<button onclick="return Project.captureImage()">Capture Photo</button>
+					</li>
+					<li>
+						<button onclick="return Project.getPicture()">Select from Library</button>
+					</li>
+					<li>
+						<button onClick="$('#image_action_sheet').hide()">Cancel</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+<script type="text/javascript"> 
+        function displayForm(c){ 
+            if(c.value == "cachorro"){ 
+				document.getElementById("dogform").style.display='inline'; 
+     			document.getElementById("catform").style.display='none'; 
+            } 
+            else if(c.value =="gato"){ 
+                document.getElementById("dogform").style.display='none';
+      			document.getElementById("catform").style.display='inline';
+            } 
+            else{ 
+            } 
+         }         
+    </script>  
+		<script type="text/javascript">
+
+		// Instantiate a slider
+			var mySlider = $("input.slider").slider();
+
+			// Call a method on the slider
+			var value = mySlider.slider('getValue');
+
+			var sex_type = "Femea";
+			/*************** version 1.1 **************/
+			$(".btn").click(function(event) {
+				/* Act on the event */
+				if(!$(this).hasClass('active'))
+				{
+					$(this).removeClass('inactive');
+					$(this).addClass('active');
+					if($(this).hasClass('btn-default'))
+					{
+						$('.btn-success').removeClass('active');
+						$('.btn-success').addClass('inactive');
+						$("#btnVal").val('1');
+						sex_type = "Macho";
+					}
+					else
+					{
+						$('.btn-default').removeClass('active');
+						$('.btn-default').addClass('inactive');
+						$("#btnVal").val('0');
+						sex_type = "Femea";
+					}
+				}
+			});
+
+		var bet_detail_closed_scroll = new iScroll('closed_bet_details');
+		bet_detail_closed_scroll.refresh();
+
+  	 	function showImageUpload(){
+   			Project.handleImageUpload($('#img_image')[0]);
+   		}
+
+		function callWSPetRegister(){
+
+			var pet_name = $("#pet_name").val();
+			var age = $("input.slider").slider().val();
+			var base64_image = $("#image").val();
+
+			var sex_search;
+			var animal_type;
+			
+			if (document.getElementById('squaredThree').checked) {
+  				sex_search = document.getElementById('squaredThree').value;
+			}else{
+				sex_search = document.getElementById('squaredFour').value;
+			}
+			
+			if (document.getElementById('cachorro').checked) {
+  				animal_type = document.getElementById('cachorro').value;
+			}else{
+				animal_type= document.getElementById('gato').value;
+			}
+			
+			var e = document.getElementById("raca");
+			var raca = e.options[e.selectedIndex].value;
+			
+			getWSData('register_pet.php',{owner_id : "1",pet_name : pet_name, sex_type: sex_type,sex_search : sex_search,age : age,image_link : base64_image, raca: raca, animal_type : animal_type},function(res){
+				var json = JSON.parse(res);
+				//alert("Pet Cadastrado!");
+				if(json['settings']['success'] == '1'){
+                	alert(json['settings']['message']);
+					window.location.href = 'page2.html';
+                }else{
+					alert(json['settings']['message']);
+                }
+			});
+		}
+
+ 		</script>
+	</body>
+</html>

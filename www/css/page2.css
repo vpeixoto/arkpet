@@ -1,0 +1,226 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+	background-color:#e7edf0;
+	 -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+.header{
+	background: url(../img/header.png);
+	background-position:bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+	height:80px;
+	margin-top:-20px;
+	color:#ffffff;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:30%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+input {
+    background-color: rgba(255,255,255,0.1);
+    cursor: auto;
+    border: none;
+}
+input[type="text"],input[type="password"], textarea {
+
+  color : #0d2c53; 
+
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.forgot{
+	font-size: 12px;
+    line-height: 1.3;
+    font-family: sans-serif;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: underline;
+}
+
+.register_btn{
+	font-size: 14px;
+    line-height: 1.5;
+    font-family: sans-serif;
+	color: rgba(255, 255, 255, 1);
+	text-decoration: underline;
+}
+
+.input-group{
+	margin-top: 15px;
+	margin-bottom:10px;
+}
+
+.btn1 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_cadastro.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn1:active {
+	background-color:#3da597;
+}
+.btn2 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_ficha.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn2:active {
+	background-color:#ab7901;
+}
+.btn3 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_vacinas.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn3:active {
+	background-color:#026c99;
+}
+.btn4 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_veterinarios.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn4:active {
+	background-color:#587f02;
+}
+.btn5 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_petshops.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn5:active {
+	background-color:#1e5aa5;
+}
+.btn6 {
+	height: 100%; 
+	width: 100%;
+	background-size:50%;
+	background-image:url('../img/btns/btn_encontros.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-color:transparent;
+}
+.btn6:active {
+	background-color:#a33513;
+}
+.register{
+	margin-top: 30px;
+}
+.dummy {
+				margin-top: 100%;
+			}
+			.btn-1{
+				background-color:#56eeda;
+			}
+			.btn-2{
+				background-color:#ffb400;
+			}
+			.btn-3{
+				background-color:#00a6ec;
+			}
+			.btn-4{
+				background-color:#7eb800;
+			}
+			.btn-5{
+				background-color:#0d2c53;
+			}
+			.btn-6{
+				background-color:#f6511d;
+			}

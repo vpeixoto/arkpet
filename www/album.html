@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Screen 2</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/custom.css">
+    
+        <link rel="stylesheet" type="text/css" href="css/page.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  		<link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+    <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="cbp-spmenu-push">
+<div class="main">
+	<div class="header">
+		<div class="header-upper">
+			<div class="arrow text-center col-xs-2"><i class="fa fa-arrow-left"></i></div>
+			<div class="text col-xs-8">Álbum de fotos</div>
+			<div class="text col-xs-2"><i class="fa fa-camera"></i></div>
+		</div>
+		<div class="header-lower">
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+			<div class="four"></div>
+		</div>
+	</div>
+	<div class="main-container">
+    	<div id="gallery" class="ui-grid-a">
+        	<div class="ui-block-a">
+            	<div class="thumbnail">
+                	<img src="pics/foto1.png" title="" onClick="foto1();" />
+                </div>
+            </div>
+            <div class="ui-block-b">
+            	<div class="thumbnail">
+                	<img src="pics/foto2.jpg" title="" onClick="foto2();" />
+                </div>
+            </div>
+           	<div class="ui-block-a">
+            	<div class="thumbnail">
+                	<img src="pics/foto3.jpg" title="" onClick="foto3();" />
+              	</div>
+            </div>
+            <div class="ui-block-b">
+            	<div class="thumbnail">
+                	<img src="pics/foto4.jpg" title="" onClick="foto4();" />
+                </div>
+            </div>
+     	</div>
+	</div>
+</div>
+<!-- jQuery -->
+<script src="./js/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="./js/classie.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function foto1(){
+		window.location.href = "foto1.html";
+	}
+			function foto2(){
+				window.location.href = "foto2.html";
+			}
+			function foto3(){
+				window.location.href = "foto3.html";
+			}
+			function foto4(){
+				window.location.href = "foto4.html";
+			}
+			function voltar(){
+				window.location.href = "page2.html";
+			}
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Screen 1</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/custom.css">
+		<link rel="stylesheet" href="./css/bootstrap-slider.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/Project.js"></script>
+		<!-- jQuery -->
+		<script src="./js/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/bootstrap-slider.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/iscroll.js"></script>
+        <style>
+			#button1 {
+			  display: block;
+			  margin:auto;
+			  width: 100px;
+			  height: 100px;
+			  background: url(img/tirar_foto.png) no-repeat top;
+			}
+			
+			#button2 {
+			  display: block;
+			  margin:auto;
+			  width: 100px;
+			  height: 100px;
+			  background: url(img/add_foto.png) no-repeat top;
+			}
+			
+			#button3 {
+			  display: block;
+			  margin:auto;
+			  width: 100px;
+			  height: 100px;
+			  background: url(img/cancelar.png) no-repeat top;
+			}
+			.back{
+				background-color:#fff;
+			}
+		</style>
+
+	</head>
+	<body>
+		<form class="main" method="get" onsubmit="return false;">
+			<div class="header">
+				<div class="header-upper">
+					<div class="arrow text-center col-xs-3" id="voltar"><i class="fa fa-arrow-left"></i></div>
+					<div class="text col-xs-9">Cadastro de Pet</div>
+				</div>
+				<div class="header-lower">
+					<div class="one"></div>
+					<div class="two"></div>
+					<div class="three"></div>
+					<div class="four"></div>
+				</div>
+			</div>
+			<!--<form action="" method="post" class="bet-won-dtl" id="closed_bet_details">-->
+			<div class="control-container">
+				<div class="label-txt text-center">Adicionar Foto</div>
+				<div class="upload" onclick="showImageUpload()">
+					<!--<input type="file" name="upload"/>-->
+					<img src="" alt="" id="img_image"/>
+					<input type="hidden" name="profile_pic" id="image" value=""/>
+					<!--<a href="#" onclick="showImageUpload()" ></a>-->
+					<span class="file-txt text-center">
+						+
+					</span>
+				</div>
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Meu Animal</div>
+				<div class="control-txt">
+					<div class="col-xs-6 text-center btn-con"><button class="btn btn-success active">Femea</button></div>
+					<div class="col-xs-6 text-center btn-con"><button class="btn btn-default inactive">Macho</button></div>
+				</div>
+				<input type="hidden" value="0">
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Nome</div>
+				<div class="control-txt-50">
+					<div class="col-xs-12 text-center style-4 clearfix">
+						<input type="text" class="text-center" placeholder="Name" id="pet_name">
+					</div>
+				</div>
+			</div>
+            <div class="control-container">
+            	<article>
+                <fieldset>
+				<div class="label-txt text-center">Raça</div>
+                <form>
+                <div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Cachorro
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<label>
+                        	<input value="cachorro" type="radio" name="formselector" 
+                            onclick="displayForm(this)" id="cachorro">
+                            </label>
+						</div>
+					</div>
+				</div>
+                <div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Gato
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<label>
+                            <input value="gato" type="radio" name="formselector" onclick="displayForm(this)" id="gato">
+                            </label>  
+						</div>
+					</div>
+				</div>
+                </form>
+                
+                <form style="display:none" id="catform">
+                	<div class="label-txt text-center">
+						Escolha a raça do seu Gato:
+					</div>
+					<div class="control-txt-50">
+                	<div class="col-xs-12 text-center">
+						<select id="raca" name="raca" required>
+                        <option value="SRD">SRD</option>
+                    	<option value="Abissínio">Abissínio</option>
+                    	<option value="Angorá">Angorá</option>
+                    	<option value="Balinês">Balinês</option>
+                    	<option value="Bengali">Bengali</option>
+                    	<option value="Bobtail Japonês">Bobtail Japonês</option>
+                    	<option value="Bombaim">Bombaim</option>
+                    	<option value="British Shorthair">British Shorthair</option>
+                    	<option value="Burmilla">Burmilla</option>
+                    	<option value="Califórnia Malhado">Califórnia Malhado</option>
+                    	<option value="Chartreux">Chartreux</option>
+                    	<option value="Cingapura">Cingapura</option>
+                    	<option value="Colorpoint Shorthair">Colorpoint Shorthair</option>
+                    	<option value="Cornish Rex">Cornish Rex</option>
+                    	<option value="Devon Rex">Devon Rex</option>
+                    	<option value="Doméstico">Doméstico</option>
+                    	<option value="Exótico">Exótico</option>
+                    	<option value="German Rex">German Rex</option>
+                    	<option value="Korat">Korat</option>
+                    	<option value="La Perm">La Perm</option>
+                    	<option value="Maine Coon">Maine Coon</option>
+                    	<option value="Mau Egípcio">Mau Egípcio</option>
+                    	<option value="Munchkin">Munchkin</option>
+                    	<option value="Norueguês da Floresta">Norueguês da Floresta</option>
+                    	<option value="Ocicat">Ocicat</option>
+                    	<option value="Oriental">Oriental</option>
+                    	<option value="Pêlo Curto Europeu">Pêlo Curto Europeu</option>
+                    	<option value="Pêlo Longo Colourpoint">Pêlo Longo Colourpoint</option>
+                    	<option value="Persa">Persa</option>
+                    	<option value="Peterbald">Peterbald</option>
+                    	<option value="Pixie Bob">Pixie Bob</option>
+                    	<option value="RagaMuffin">RagaMuffin</option>
+                    	<option value="Ragdoll">Ragdoll</option>
+                    	<option value="Russian Blue">Russian Blue</option>
+                    	<option value="Sagrado da Birmânia">Sagrado da Birmânia</option>
+                    	<option value="Scottish Fold">Scottish Fold</option>
+                    	<option value="Selkirk Rex">Selkirk Rex</option>
+                    	<option value="Serengeti">Serengeti</option>
+                    	<option value="Siamês">Siamês</option>
+                    	<option value="Somali">Somali</option>
+                    	<option value="Sphynx">Sphynx</option>
+                    	<option value="Tiffanie">Tiffanie</option>
+                    	<option value="Tonquinês">Tonquinês</option>
+                    	<option value="Van Turco">Van Turco</option>
+						</select>
+					</div>
+					</div>
+                
+            	</form>
+            	<form style="display:none" id="dogform">
+                	<div class="label-txt text-center">
+						Escolha a raça do seu Cachorro:
+					</div>
+					<div class="control-txt-50">
+                	<div class="col-xs-12 text-center">
+						<select id="raca2" name="raca" required>
+                        <option value="SRD">SRD</option>
+<option value="Affen Tzu">	Affen Tzu	</option>
+<option value="Afghanhound">	Afghanhound	</option>
+<option value="Agua Spaniel">	Agua Spaniel	</option>
+<option value="Aidi">	Aidi	</option>
+<option value="Airedale Terrier">	Airedale Terrier	</option>
+<option value="Akita Inu">	Akita Inu	</option>
+<option value="Alaskan Klee Kai">	Alaskan Klee Kai	</option>
+<option value="American Akita">	American Akita	</option>
+<option value="American Staffordshire">	American Staffordshire	</option>
+<option value="Appenzeller Sennenhund">	Appenzeller Sennenhund	</option>
+<option value="Atlas Terrier">	Atlas Terrier	</option>
+<option value="Australian Cattle Dog">	Australian Cattle Dog	</option>
+<option value="Australian Shepherd">	Australian Shepherd	</option>
+<option value="Banter Bulldogge">	Banter Bulldogge	</option>
+<option value="Basenji">	Basenji	</option>
+<option value="Basset Azul da Gasgonha">	Basset Azul da Gasgonha	</option>
+<option value="Basset da Bretanha">	Basset da Bretanha	</option>
+<option value="Basset Hound">	Basset Hound	</option>
+<option value="Beagle">	Beagle	</option>
+<option value="Bearded Collie">	Bearded Collie	</option>
+<option value="Beira Terrier">	Beira Terrier	</option>
+<option value="Bendlington Terrier">	Bendlington Terrier	</option>
+<option value="Bergamasco">	Bergamasco	</option>
+<option value="Bernese Mountain Dog">	Bernese Mountain Dog	</option>
+<option value="Bichon Frisé">	Bichon Frisé	</option>
+<option value="Bichon Havanês">	Bichon Havanês	</option>
+<option value="Bloodhound">	Bloodhound	</option>
+<option value="Bluetick Coonhound">	Bluetick Coonhound	</option>
+<option value="Boerboel">	Boerboel	</option>
+<option value="Bolognese">	Bolognese	</option>
+<option value="Border Collie">	Border Collie	</option>
+<option value="Borzoi">	Borzoi	</option>
+<option value="Boston Terrier">	Boston Terrier	</option>
+<option value="Bouvier des Flandres">	Bouvier des Flandres	</option>
+<option value="Boxer">	Boxer	</option>
+<option value="Boykin Spaniel">	Boykin Spaniel	</option>
+<option value="Braco de Burbônia">	Braco de Burbônia	</option>
+<option value="Briard">	Briard	</option>
+<option value="Brittany">	Brittany	</option>
+<option value="Buldogue Campeiro">	Buldogue Campeiro	</option>
+<option value="Buldogue Inglês">	Buldogue Inglês	</option>
+<option value="Bull Terrier">	Bull Terrier	</option>
+<option value="Bullmastiff">	Bullmastiff	</option>
+<option value="Cairn Terrier">	Cairn Terrier	</option>
+<option value="Cane Corso">	Cane Corso	</option>
+<option value="Cão D’Água Português">	Cão D’Água Português	</option>
+<option value="Cão de Canaã">	Cão de Canaã	</option>
+<option value="Cão de Kunming">	Cão de Kunming	</option>
+<option value="Cão Pastor do Cáucaso">	Cão Pastor do Cáucaso	</option>
+<option value="Cardigan Galês Corgi">	Cardigan Galês Corgi	</option>
+<option value="Carolina Dog">	Carolina Dog	</option>
+<option value="Cavalier King Charles Spaniel">	Cavalier King Charles Spaniel	</option>
+<option value="Cesky Fousek">	Cesky Fousek	</option>
+<option value="Chihuahua">	Chihuahua	</option>
+<option value="Chongqing Dog">	Chongqing Dog	</option>
+<option value="Chow Chow">	Chow Chow	</option>
+<option value="Cimarron">	Cimarron	</option>
+<option value="Clumber Spaniel">	Clumber Spaniel	</option>
+<option value="Cocker Spaniel Americano">	Cocker Spaniel Americano	</option>
+<option value="Cocker Spaniel Inglês">	Cocker Spaniel Inglês	</option>
+<option value="Collie">	Collie	</option>
+<option value="Collie Scotch">	Collie Scotch	</option>
+<option value="Coydog">	Coydog	</option>
+<option value="Cristado Chinês">	Cristado Chinês	</option>
+<option value="Dachsbracke Alpino">	Dachsbracke Alpino	</option>
+<option value="Dachshund">	Dachshund	</option>
+<option value="Dálmata">	Dálmata	</option>
+<option value="Dandie Dinmont Terrier">	Dandie Dinmont Terrier	</option>
+<option value="Doberman">	Doberman	</option>
+<option value="Dogo Argentino">	Dogo Argentino	</option>
+<option value="Dogue Alemão">	Dogue Alemão	</option>
+<option value="Dogue Brasileiro">	Dogue Brasileiro	</option>
+<option value="Dogue Canário">	Dogue Canário	</option>
+<option value="Dogue de Bordeaux">	Dogue de Bordeaux	</option>
+<option value="Elkhound Norueguês Cinza">	Elkhound Norueguês Cinza	</option>
+<option value="Elkhound Norueguês Preto">	Elkhound Norueguês Preto	</option>
+<option value="English Toy Spaniel">	English Toy Spaniel	</option>
+<option value="Estepe Borzoi">	Estepe Borzoi	</option>
+<option value="Eurasier">	Eurasier	</option>
+<option value="Fila Brasileiro">	Fila Brasileiro	</option>
+<option value="Flatcoated Retriever">	Flatcoated Retriever	</option>
+<option value="Fox Paulistinha">	Fox Paulistinha	</option>
+<option value="Fox Terrier">	Fox Terrier	</option>
+<option value="Foxhound Americano">	Foxhound Americano	</option>
+<option value="Galgo Espanhol">	Galgo Espanhol	</option>
+<option value="Golden Retriever">	Golden Retriever	</option>
+<option value="Grande Azul da Gasconha">	Grande Azul da Gasconha	</option>
+<option value="Greyhound">	Greyhound	</option>
+<option value="Griffon de Bruxelas">	Griffon de Bruxelas	</option>
+<option value="Harrier">	Harrier	</option>
+<option value="Hokkaido">	Hokkaido	</option>
+<option value="Hovawart">	Hovawart	</option>
+<option value="Huskie Siberiano">	Huskie Siberiano	</option>
+<option value="Iceland Dog">	Iceland Dog	</option>
+<option value="Indian Americano">	Indian Americano	</option>
+<option value="Irish Soft Coated Wheaten Terrier">	Irish Soft Coated Wheaten Terrier	</option>
+<option value="Irish Wolfhound">	Irish Wolfhound	</option>
+<option value="Jack Russell Terrier">	Jack Russell Terrier	</option>
+<option value="Jamthund">	Jamthund	</option>
+<option value="Jindo Coreano">	Jindo Coreano	</option>
+<option value="Kai">	Kai	</option>
+<option value="Kangal Dog">	Kangal Dog	</option>
+<option value="Keeshond">	Keeshond	</option>
+<option value="Kelpie Australiano">	Kelpie Australiano	</option>
+<option value="Kerry Blue Terrier">	Kerry Blue Terrier	</option>
+<option value="Khala">	Khala	</option>
+<option value="Kishu">	Kishu	</option>
+<option value="Komondor">	Komondor	</option>
+<option value="Kooikerhondje">	Kooikerhondje	</option>
+<option value="Kuvasz">	Kuvasz	</option>
+<option value="Labradoodle Australiano">	Labradoodle Australiano	</option>
+<option value="Labrador">	Labrador	</option>
+<option value="Leonberger">	Leonberger	</option>
+<option value="Lhasa Apso">	Lhasa Apso	</option>
+<option value="Löwchen">	Löwchen	</option>
+<option value="Lundehund">	Lundehund	</option>
+<option value="Lurcher">	Lurcher	</option>
+<option value="Malamute do Alasca">	Malamute do Alasca	</option>
+<option value="Maltês">	Maltês	</option>
+<option value="Manchester Terrier">	Manchester Terrier	</option>
+<option value="Maremmano">	Maremmano	</option>
+<option value="Markiesje">	Markiesje	</option>
+<option value="Mastife Inglês">	Mastife Inglês	</option>
+<option value="Mastim do Tibet">	Mastim do Tibet	</option>
+<option value="Mastim Napolitano">	Mastim Napolitano	</option>
+<option value="Mi-Ki">	Mi-Ki	</option>
+<option value="Mudi">	Mudi	</option>
+<option value="Norfolk Terrier">	Norfolk Terrier	</option>
+<option value="Norwich Terrier">	Norwich Terrier	</option>
+<option value="Old English Sheepdog">	Old English Sheepdog	</option>
+<option value="Ori-Pei">	Ori-Pei	</option>
+<option value="Orichid Peruvian do Inca">	Orichid Peruvian do Inca	</option>
+<option value="Ovelheiro Gaúcho">	Ovelheiro Gaúcho	</option>
+<option value="Papillon">	Papillon	</option>
+<option value="Pastor Alemão">	Pastor Alemão	</option>
+<option value="Pastor Belga">	Pastor Belga	</option>
+<option value="Pastor de Shetland">	Pastor de Shetland	</option>
+<option value="Pastor Tatra">	Pastor Tatra	</option>
+<option value="Pekingese">	Pekingese	</option>
+<option value="Pequinês">	Pequinês	</option>
+<option value="Pinscher">	Pinscher	</option>
+<option value="Pit Bull">	Pit Bull	</option>
+<option value="Podengo Português">	Podengo Português	</option>
+<option value="Pointer Alemão">	Pointer Alemão	</option>
+<option value="Pointer Inglês">	Pointer Inglês	</option>
+<option value="Pointevin">	Pointevin	</option>
+<option value="Polski Owczarek Nizinny">	Polski Owczarek Nizinny	</option>
+<option value="Poodle">	Poodle	</option>
+<option value="Prague Rat-Cather">	Prague Rat-Cather	</option>
+<option value="Pug">	Pug	</option>
+<option value="Pugairn">	Pugairn	</option>
+<option value="Puli">	Puli	</option>
+<option value="Pumi">	Pumi	</option>
+<option value="Rastreador Montanhês da Baviera">	Rastreador Montanhês da Baviera	</option>
+<option value="Rat Terrier">	Rat Terrier	</option>
+<option value="Redbone Coonhound">	Redbone Coonhound	</option>
+<option value="Rhodesian Ridgeback">	Rhodesian Ridgeback	</option>
+<option value="Rottweiler">	Rottweiler	</option>
+<option value="Sabujo Alemão, Braco Alemão">	Sabujo Alemão, Braco Alemão	</option>
+<option value="Sabujo Austríaco Preto e Castanho">	Sabujo Austríaco Preto e Castanho	</option>
+<option value="Sabujo Helênico">	Sabujo Helênico	</option>
+<option value="Saluki">	Saluki	</option>
+<option value="Samoieda">	Samoieda	</option>
+<option value="São Bernardo">	São Bernardo	</option>
+<option value="Schillerstovare">	Schillerstovare	</option>
+<option value="Schipperke">	Schipperke	</option>
+<option value="Schnauzer">	Schnauzer	</option>
+<option value="Setter Gordon">	Setter Gordon	</option>
+<option value="Setter Inglês">	Setter Inglês	</option>
+<option value="Setter Irlandês">	Setter Irlandês	</option>
+<option value="Shar Pei">	Shar Pei	</option>
+<option value="Shepherd de Anatolian">	Shepherd de Anatolian	</option>
+<option value="Shiba">	Shiba	</option>
+<option value="Shih-Tzu">	Shih-Tzu	</option>
+<option value="Shorthaired Pinscher">	Shorthaired Pinscher	</option>
+<option value="Silky Terrier">	Silky Terrier	</option>
+<option value="Sloughi">	Sloughi	</option>
+<option value="Spaniel Francês">	Spaniel Francês	</option>
+<option value="Spaniel Italiano">	Spaniel Italiano	</option>
+<option value="Spaniel Perdigueiro">	Spaniel Perdigueiro	</option>
+<option value="Spaniel Tibetano">	Spaniel Tibetano	</option>
+<option value="Spitz Alemão">	Spitz Alemão	</option>
+<option value="Spitz da Lapônia">	Spitz da Lapônia	</option>
+<option value="Spitz Japonês">	Spitz Japonês	</option>
+<option value="Springer Inglês Spaniel">	Springer Inglês Spaniel	</option>
+<option value="Staffordshire Bull Terrier">	Staffordshire Bull Terrier	</option>
+<option value="Staghound Americano">	Staghound Americano	</option>
+<option value="Stumpy">	Stumpy	</option>
+<option value="Sussex Spaniel">	Sussex Spaniel	</option>
+<option value="Terranova">	Terranova	</option>
+<option value="Terrier Australiano">	Terrier Australiano	</option>
+<option value="Terrier do Tibet">	Terrier do Tibet	</option>
+<option value="Terrier Escocês">	Terrier Escocês	</option>
+<option value="Thai Ridgeback">	Thai Ridgeback	</option>
+<option value="Tollers">	Tollers	</option>
+<option value="Tosa Inu">	Tosa Inu	</option>
+<option value="Toxirn">	Toxirn	</option>
+<option value="Veadeiro Brasileiro">	Veadeiro Brasileiro	</option>
+<option value="Vizsla">	Vizsla	</option>
+<option value="Vulpino Italiano">	Vulpino Italiano	</option>
+<option value="Weimaraner">	Weimaraner	</option>
+<option value="Welsh Corgi Cardigan">	Welsh Corgi Cardigan	</option>
+<option value="Welsh Corgi Pembroke">	Welsh Corgi Pembroke	</option>
+<option value="Welsh Terrier">	Welsh Terrier	</option>
+<option value="West Highland White Terrier">	West Highland White Terrier	</option>
+<option value="Whippet">	Whippet	</option>
+<option value="Wolfhound Terrier">	Wolfhound Terrier	</option>
+<option value="Xoloitzcuintli">	Xoloitzcuintli	</option>
+<option value="Yorkshire Terrier">	Yorkshire Terrier	</option>
+						</select>
+					</div>
+					</div>
+            		
+            	</form> 
+            
+    			</fieldset>
+    			</article>
+			</div>
+            <!--
+			<div class="control-container">
+				<div class="label-txt text-center">Quero Conhecer</div>
+				<div class="control-txt-50">
+                	<div class="col-xs-1"></div>
+					<div class="col-xs-8">
+						Femea
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredThree">
+							<input type="radio" name="gender" value="femea" id="squaredThree" checked/>
+							<label for="squaredThree"></label>
+						</div>
+					</div>
+				</div>
+				<div class="control-txt-50">
+					<div class="col-xs-1"></div>
+                    <div class="col-xs-8">
+						Macho
+					</div>
+					<div class="col-xs-2 text-center">
+						<div class="squaredFour">
+							<input type="radio" name="gender" value="macho" id="squaredFour" />
+							<label for="squaredFour"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+            -->
+			<div class="control-container">
+				<div class="label-txt text-center">Idade</div>
+				<div class="control-txt slider-container">
+					<div class="col-xs-2-custom text-center"> 0 </div>
+					<div class="col-xs-8-custom"><input type="text" name="slider" class="slider" data-provide="slider" data-slider-min="0" data-slider-max="29" data-slider-step="1" data-slider-value="0" data-slider-tooltip_position="bottom" data-slider-tooltip="show"></div>
+					<div class="col-xs-2-custom text-center"> 29 </div>
+				</div>
+			</div>
+			<div class="control-container">
+				<div class="label-txt text-center">Email para Contato</div>
+				<div class="control-txt-50">
+					<div class="col-xs-12 text-center style-4 clearfix">
+                    	<input type="text" class="text-center" id="pet_email" name="email" placeholder="seuemail@email.com">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="submit-btn-custom" onclick="callWSPetRegister()">
+					<div class="submit-btn-inner">
+						<i class="fa fa-check"></i>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<div id="image_action_sheet" class="popup" style="position: absolute; bottom: 0; width: 100%; display: none;  margin: 0; padding: 0; left: 0; z-index: 1000;">
+			<div class="row back">
+            	<div class="col-sm-4">
+                        <a id="button1" onClick="return Project.captureImage()"></a>
+                </div>
+              	<div class="col-sm-4">
+                        <a id="button2" onClick="return Project.getPicture()"></a>
+                </div>
+			  	<div class="col-sm-4">
+                        <a id="button3" onClick="$('#image_action_sheet').hide()"></a>
+                </div>
+			</div>
+            	<!--
+				<ul>
+					<li>
+						<button onclick="return Project.captureImage()">Capture Photo</button>
+					</li>
+					<li>
+						<button onclick="return Project.getPicture()">Select from Library</button>
+					</li>
+					<li>
+						<button onClick="$('#image_action_sheet').hide()">Cancel</button>
+					</li>
+				</ul>
+                -->
+		</div>
+
+<script type="text/javascript"> 
+        function displayForm(c){ 
+            if(c.value == "cachorro"){ 
+				document.getElementById("dogform").style.display='inline'; 
+     			document.getElementById("catform").style.display='none'; 
+            } 
+            else if(c.value =="gato"){ 
+                document.getElementById("dogform").style.display='none';
+      			document.getElementById("catform").style.display='inline';
+            } 
+            else{ 
+            } 
+         }         
+    </script>  
+		<script type="text/javascript">
+
+		// Instantiate a slider
+			var mySlider = $("input.slider").slider();
+
+			// Call a method on the slider
+			var value = mySlider.slider('getValue');
+
+			var sex_type = "Femea";
+			var sex = 2;
+			/*************** version 1.1 **************/
+			$(".btn").click(function(event) {
+				/* Act on the event */
+				if(!$(this).hasClass('active'))
+				{
+					$(this).removeClass('inactive');
+					$(this).addClass('active');
+					if($(this).hasClass('btn-default'))
+					{
+						$('.btn-success').removeClass('active');
+						$('.btn-success').addClass('inactive');
+						$("#btnVal").val('1');
+						sex_type = "Macho";
+						sex = 1;
+					}
+					else
+					{
+						$('.btn-default').removeClass('active');
+						$('.btn-default').addClass('inactive');
+						$("#btnVal").val('0');
+						sex_type = "Femea";
+						sex = 2;
+					}
+				}
+			});
+
+		var bet_detail_closed_scroll = new iScroll('closed_bet_details');
+		bet_detail_closed_scroll.refresh();
+
+  	 	function showImageUpload(){
+   			Project.handleImageUpload($('#img_image')[0]);
+   		}
+
+		function callWSPetRegister(){
+			var pet_email = $("#pet_email").val();
+			var pet_name = $("#pet_name").val();
+			var age = $("input.slider").slider().val();
+			var base64_image = $("#image").val();
+			
+			var owner_id = window.localStorage.getItem("userId");
+			var sex_search;
+			var animal_type;
+			
+			//if (document.getElementById('squaredThree').checked) {
+			//sex_search = document.getElementById('squaredThree').value;
+			//}else{
+			//	sex_search = document.getElementById('squaredFour').value;
+			//}
+			
+			if(sex == 2){
+				sex_search = 'macho';
+			}else{
+				sex_search = 'femea';
+			}
+			
+			if (document.getElementById('cachorro').checked) {
+  				animal_type = document.getElementById('cachorro').value;
+			}else{
+				animal_type = document.getElementById('gato').value;
+			}
+			
+			if (animal_type == 'gato'){
+				var e = document.getElementById("raca");
+				var raca = e.options[e.selectedIndex].value;
+			}else{
+				var e = document.getElementById("raca2");
+				var raca = e.options[e.selectedIndex].value;
+			}
+			var x = document.getElementById("cachorro").checked;
+			var y = document.getElementById("gato").checked;
+						
+			if(base64_image== ''){
+				alert('Por favor insira uma imagem!');
+			}else
+			if(pet_name == ''){
+				alert('Por favor preencha o nome do seu pet!');
+			}else
+			if ((!x)&&(!y)){
+				alert('Por favor escolha a raça do seu pet!');
+			}else
+			if(validateEmail(pet_email) == false){
+				// mensagem já apareceu
+			}else{
+				getWSData('register_pet.php',{owner_id : owner_id, pet_email : pet_email ,pet_name : pet_name, sex_type: sex_type,sex_search : sex_search,age : age,image_link : base64_image, raca: raca, animal_type : animal_type},function(res){
+					var json = JSON.parse(res);
+					//alert("Pet Cadastrado!");
+					if(json['settings']['success'] == '1'){
+						alert(json['settings']['message']);
+						window.location.href = 'page2.html';
+					}else{
+						alert(json['settings']['message']);
+					}
+				});
+			}
+		}
+		function validateEmail(x) {
+			var atpos = x.indexOf("@");
+			var dotpos = x.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+				alert("O email é inválido, por favor tente novamente!");
+				document.getElementById('pet_email').value = "";
+				return false;
+			}
+			return true;
+		}
+		</script>
+        <script>
+		$(function() {
+			$("#voltar").click(function() {
+				window.location="page2.html";
+			});
+		});
+
+ 		</script>
+	</body>
+</html>
